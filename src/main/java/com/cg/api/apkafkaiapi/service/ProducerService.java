@@ -20,7 +20,7 @@ public class ProducerService {
         this.kafkaTemplate.send(AppConstants.TOPIC_NAME_MESSAGE, message);
     }
 
-    public void saveCreateUserLog(OrderMeta orderMeta)
+    public void saveOrderLog(OrderMeta orderMeta)
     {
         logger.info(String.format("Order created -> %s", orderMeta));
         this.kafkaTemplate.send(AppConstants.TOPIC_NAME_ORDER_LOG, orderMeta);
